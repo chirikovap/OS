@@ -18,14 +18,14 @@ std::string UpReg(const std::string& s) {
 std::string WithoutDoubleSpace(const std::string& s) {
     std::string ch;
 
-    std::string OutDoubleSpace;
-    OutDoubleSpace += s[0];
+    std::string outDoubleSpace;
+    outDoubleSpace += s[0];
     for (size_t i = 1; i < s.length(); i++) {
         if (s[i - 1] != ' ' || s[i] != ' ') {
-            OutDoubleSpace += s[i];
+            outDoubleSpace += s[i];
         }
     }
-    return OutDoubleSpace;
+    return outDoubleSpace;
 }
 
 void CreatePipe(int fd[]) {
