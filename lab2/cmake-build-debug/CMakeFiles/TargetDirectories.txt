@@ -1,0 +1,5 @@
+/home/polina/OS/lab2/cmake-build-debug/CMakeFiles/lab2.dir
+/home/polina/OS/lab2/cmake-build-debug/CMakeFiles/child1.dir
+/home/polina/OS/lab2/cmake-build-debug/CMakeFiles/child2.dir
+/home/polina/OS/lab2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/polina/OS/lab2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
