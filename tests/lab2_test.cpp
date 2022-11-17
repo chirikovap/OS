@@ -13,19 +13,23 @@
 TEST(FirstLabTests, SimpleTest) {
 
 
-    std::vector<std::string> inputIN {
+    std::vector<std::string> inputIn {
             "abcde  GG",
             "AAAA aaa  Laba"
+            "   "
+            ""
 
     };
 
     std::vector<std::string> expectedOutput {
             "ABCDE GG",
             "AAAA AAA LABA"
+            " "
+            ""
 
     };
-    std::vector <std::string> output = ParentRoutine("../lab2/child1", "../lab2/child2", inputIN);
-        EXPECT_EQ(output, expectedOutput);
+    std::vector <std::string> output = ParentRoutine("../lab2/child1", "../lab2/child2", inputIn);
+    EXPECT_EQ(output, expectedOutput);
 
 
 }
