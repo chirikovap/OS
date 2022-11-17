@@ -1,9 +1,0 @@
-# ninja log v5
-1	2344	1668619950812773296	CMakeFiles/lab2_test.dir/home/polina/OS/lab2/src/utils.o	ea153f4b2199e22f
-0	2344	1668619950852770369	CMakeFiles/lab2_test.dir/lab2_test.o	75159f554e56dbe2
-1	2344	1668619950820772710	CMakeFiles/lab2_test.dir/home/polina/OS/lab2/src/parent.o	d37d95ee4a7f3e3d
-1	2345	1668619950816773003	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	1d06d67d41483e04
-1	7731	1668619956300372990	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	bf55442c2abc664d
-7732	7870	1668619956436363099	lib/libgtestd.a	941ce9556aaeca2e
-7870	7905	1668619956480359899	lib/libgtest_maind.a	ea5b62ac53fb62dd
-7905	8391	1668619956964324699	lab2_test	83fd37fdee210464
