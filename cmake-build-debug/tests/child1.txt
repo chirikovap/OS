@@ -1,2 +1,2 @@
-ABCDE  GG
-AAAA AAA  LABA
+abcde  GG
+AAAA aaa  Laba

@@ -47,7 +47,7 @@ cmake_ninja_workdir = /home/polina/OS/lab2/cmake-build-debug/
 #############################################
 # Order-only phony target for lab2
 
-build cmake_object_order_depends_target_lab2: phony || CMakeFiles/lab2.dir
+build cmake_object_order_depends_target_lab2: phony || child1 child2
 
 build CMakeFiles/lab2.dir/main.o: CXX_COMPILER__lab2_Debug /home/polina/OS/lab2/main.cpp || cmake_object_order_depends_target_lab2
   DEP_FILE = CMakeFiles/lab2.dir/main.o.d
@@ -70,27 +70,6 @@ build CMakeFiles/lab2.dir/src/utils.o: CXX_COMPILER__lab2_Debug /home/polina/OS/
   OBJECT_DIR = CMakeFiles/lab2.dir
   OBJECT_FILE_DIR = CMakeFiles/lab2.dir/src
 
-build CMakeFiles/lab2.dir/src/child1.o: CXX_COMPILER__lab2_Debug /home/polina/OS/lab2/src/child1.cpp || cmake_object_order_depends_target_lab2
-  DEP_FILE = CMakeFiles/lab2.dir/src/child1.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/polina/OS/lab2/include
-  OBJECT_DIR = CMakeFiles/lab2.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab2.dir/src
-
-build CMakeFiles/lab2.dir/src/child2.o: CXX_COMPILER__lab2_Debug /home/polina/OS/lab2/src/child2.cpp || cmake_object_order_depends_target_lab2
-  DEP_FILE = CMakeFiles/lab2.dir/src/child2.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/polina/OS/lab2/include
-  OBJECT_DIR = CMakeFiles/lab2.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab2.dir/src
-
-build CMakeFiles/lab2.dir/tests.o: CXX_COMPILER__lab2_Debug /home/polina/OS/lab2/tests.cpp || cmake_object_order_depends_target_lab2
-  DEP_FILE = CMakeFiles/lab2.dir/tests.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/polina/OS/lab2/include
-  OBJECT_DIR = CMakeFiles/lab2.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab2.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lab2
@@ -99,7 +78,7 @@ build CMakeFiles/lab2.dir/tests.o: CXX_COMPILER__lab2_Debug /home/polina/OS/lab2
 #############################################
 # Link the executable lab2
 
-build lab2: CXX_EXECUTABLE_LINKER__lab2_Debug CMakeFiles/lab2.dir/main.o CMakeFiles/lab2.dir/src/parent.o CMakeFiles/lab2.dir/src/utils.o CMakeFiles/lab2.dir/src/child1.o CMakeFiles/lab2.dir/src/child2.o CMakeFiles/lab2.dir/tests.o
+build lab2: CXX_EXECUTABLE_LINKER__lab2_Debug CMakeFiles/lab2.dir/main.o CMakeFiles/lab2.dir/src/parent.o CMakeFiles/lab2.dir/src/utils.o || child1 child2
   FLAGS = -g
   LINK_FLAGS = -rdynamic
   OBJECT_DIR = CMakeFiles/lab2.dir
