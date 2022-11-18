@@ -61,9 +61,10 @@ std::vector<std::string> ParentRoutine(char const *pathToChild1, char const *pat
             close(pipeBetweenChildren[WRITE_END]);
             close(pipeBetweenChildren[READ_END]);
             wait(nullptr);
+            char ch;
+            std::string s;
             for(size_t i = 0; i < input.size(); ++i) {
-                char ch;
-                std::string s;
+                s.clear();
                 while(read(secondPipe[READ_END], &ch, 1) && ch != '\n') {
                     s += ch;
                 }

@@ -6,18 +6,15 @@
 
 
 std::string UpReg(const std::string& s) {
-    std::string ch;
-    std::string UpRegStr;
+    std::string upRegStr;
+    upRegStr.reserve(s.size());
     for (char i : s) {
-       ch = toupper(i);
-       UpRegStr += ch;
+       upRegStr += toupper(i);
     }
-    return UpRegStr;
+    return upRegStr;
 }
 
 std::string WithoutDoubleSpace(const std::string& s) {
-    std::string ch;
-
     std::string outDoubleSpace;
     outDoubleSpace += s[0];
     for (size_t i = 1; i < s.length(); i++) {
