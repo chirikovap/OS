@@ -44,6 +44,6 @@ void MakeDup2(int oldFd, int newFd) {
     }
 }
 
-void GetExecError(std::string const &executableFile) {
+void GetExecError(const std:: string& executableFile) {
     std::cout << "Exec \"" << executableFile << "\" error." << std::endl;
 }
