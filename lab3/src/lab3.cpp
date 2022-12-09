@@ -3,24 +3,20 @@
 #include <pthread.h>
 #include <iostream>
 
-pthread_mutex_t mutex;
-
 namespace
 {
-
     void MinVectorT(const TVector &lhs, TVector &result, int firstSt, int lastSt, int iterator)
     {
-        int min1 = lhs[firstSt];
+        int min1;
+        min1 = lhs[firstSt;
         for (int j = firstSt; j < lastSt; ++j)
         {
-            if (min1> lhs[j])
+            if (min1 > lhs[j])
             {
                 min1 = lhs[j];
             }
         }
-
-        pthread_mutex_lock(&mutex); result[iterator] = min1;
-        pthread_mutex_unlock(&mutex);
+        result[iterator] = min1;
     }
 }
 
@@ -34,7 +30,6 @@ void *MinVectorTRoutine(void *arg)
 int MinVector(const TVector &lhs, int threadCount)
 {
     int min;
-    pthread_mutex_init(&mutex, nullptr);
     int actualThreads = std::min(threadCount, ccsize(lhs));
     TVector result(actualThreads);
     if (threadCount > 1)
@@ -46,22 +41,18 @@ int MinVector(const TVector &lhs, int threadCount)
 
         for (int i = 0; i < ccsize(lhs); i += TPerThread)
         {
+            tokens[iterator].lhs = &lhs;
+            tokens[iterator].result = &result;
+            tokens[iterator].firstSt = i;
+            tokens[iterator].iterator = iterator;
             if (i + TPerThread >= ccsize(result))
             {
-                tokens[iterator].lhs = &lhs;
-                tokens[iterator].result = &result;
-                tokens[iterator].firstSt = i;
                 tokens[iterator].lastSt = ccsize(lhs);
-                tokens[iterator].iterator = iterator;
                 pthread_create(&threads[iterator], nullptr, &MinVectorTRoutine, &tokens[iterator]);
             }
             else
             {
-                tokens[iterator].lhs = &lhs;
-                tokens[iterator].result = &result;
-                tokens[iterator].firstSt = i;
                 tokens[iterator].lastSt = (i + TPerThread - 1);
-                tokens[iterator].iterator = iterator;
                 pthread_create(&threads[iterator], nullptr, &MinVectorTRoutine, &tokens[iterator]);
             }
             ++iterator;
@@ -70,7 +61,6 @@ int MinVector(const TVector &lhs, int threadCount)
         {
             pthread_join(threads[i], nullptr);
         }
-        pthread_mutex_destroy(&mutex);
     }
     else
     {
