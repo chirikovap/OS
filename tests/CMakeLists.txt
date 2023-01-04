@@ -24,3 +24,24 @@ target_link_libraries(lab3_test PRIVATE GTest::GTest)
 target_include_directories(lab3_test PRIVATE ../lab3/include)
 
 add_test(lab3_test lab3_test)
+
+add_executable(lab4_test lab4_test.cpp
+        ../lab4/src/parent.cpp
+        ../lab4/include/parent.h
+        ../lab4/src/utils.cpp .
+        ../lab4/include/utils.h)
+
+target_link_libraries(lab4_test PRIVATE GTest::GTest)
+target_include_directories(lab4_test PRIVATE ../lab4/include)
+
+add_test(lab4_test lab4_test)
+
+
+add_executable(lab5_test lab5_test.cpp)
+set(CMAKE_CXX_STANDARD 17)
+
+target_include_directories(lab5_test PRIVATE ../lab5/include)
+
+target_link_libraries(lab5_test PRIVATE math-analysis1)
+target_link_libraries(lab5_test PRIVATE GTest::GTest)
+add_test(lab5_test lab5_test)
