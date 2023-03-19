@@ -1,0 +1,2 @@
+add_executable(kp main.cpp src/BuddyAllocator.cpp src/N2Allocator.cpp main.cpp src/BuddyAllocator.cpp src/N2Allocator.cpp include/BuddyAllocator.h include/N2Allocator.h)
+target_include_directories(kp PRIVATE include)
